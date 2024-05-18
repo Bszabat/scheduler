@@ -17,7 +17,7 @@ public class Calendar {
     }
 
     // Find free time slots in the calendar
-    public List<int[]> findFreeSlots(int duration) {
+    public List<int[]> findFreeSlots (int duration)  {
         List<int[]> freeSlots = new ArrayList<>();
         int lastEnd = start;
         for (int[] meeting : plannedMeetings) {
@@ -33,13 +33,7 @@ public class Calendar {
     }
 
     // Find common free time slots for both calendars
-    public List<int[]> findCommonFreeSlots(int duration, Calendar calendar2) throws Exception {
-        if (duration <= 0) {
-            throw new Exception("Duration of the meeting must be greater than 0");
-        }
-        if (calendar2 == null) {
-            throw new Exception("Given calendar does not exist");
-        }
+    public List<int[]> findCommonFreeSlots(int duration, Calendar calendar2) {
         List<int[]> FreeTimeSlots = findFreeSlots(duration);
         List<int[]> FreeTimeSlots2 = calendar2.findFreeSlots(duration);
         List<int[]> commonSlots = new ArrayList<>();

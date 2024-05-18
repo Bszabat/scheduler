@@ -17,6 +17,7 @@ import java.util.List;
              new String[]{"14:30", "15:00"},
              new String[]{"16:00", "17:00"}
              ));
+     
          List<int[]> commonSlots = calendar.findCommonFreeSlots(30, calendar2);
          calendar.printSlots(commonSlots);
      }
